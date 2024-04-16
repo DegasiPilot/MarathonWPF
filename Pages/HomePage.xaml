@@ -1,0 +1,34 @@
+﻿<Page x:Class="MarathonWPF.Pages.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MarathonWPF.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="600"
+      Title="HomePage">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="260">
+            <Button x:Name="RunnerBtn" Style="{StaticResource RoundedButton}" Height="45" Margin="0 5" Click="RunnerBtn_Click">
+                <TextBlock Style="{StaticResource DefaultText}">Я хочу стать бегуном</TextBlock>
+            </Button>
+            <Button x:Name="SponsorBtn" Height="45" Margin="0 5" Style="{StaticResource RoundedButton}" Click="SponsorBtn_Click">
+                <TextBlock Style="{StaticResource DefaultText}">Я хочу стать спонсором бегуна</TextBlock>
+            </Button>
+            <Button x:Name="AdditionalInfoBtn" Click="AdditionalInfoBtn_Click" Height="45" Margin="0 5" Style="{StaticResource RoundedButton}">
+                <TextBlock Style="{StaticResource DefaultText}">Я хочу узнать больше о событии</TextBlock>
+            </Button>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="15" Width="100">
+            <Button Height="35" x:Name="LoginBtn" Style="{StaticResource RoundedButton}">
+                <TextBlock Style="{StaticResource SmallText}">Login</TextBlock>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

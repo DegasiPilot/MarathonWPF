@@ -1,0 +1,27 @@
+﻿<Window x:Class="MarathonWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Marathon Skills 2016" Height="480" Width="600" MinHeight="480" MinWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" MinHeight="100"/>
+            <RowDefinition Height="300*" MinHeight="300"/>
+            <RowDefinition Height="50*" MinHeight="50"/>
+        </Grid.RowDefinitions>
+        <Rectangle Fill="#FF525252"></Rectangle>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label Style="{StaticResource Title}" Foreground="White">MARATHON SKILLS 2016</Label>
+            <TextBlock Style="{StaticResource DefaultText}" Foreground="#FFCCCCCC" FontStyle="Italic" Width="160" TextAlignment="Center">
+                    Москва, Россия среда 21 октября 2016
+            </TextBlock>
+        </StackPanel>
+        <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <TextBlock Style="{StaticResource DefaultText}" Margin="0 0 5 0" VerticalAlignment="Center">До марафона осталось:</TextBlock>
+            <TextBlock Name="TimeCountdownTB" Style="{StaticResource DefaultText}" VerticalAlignment="Center"></TextBlock>
+        </StackPanel>
+    </Grid>
+</Window>
