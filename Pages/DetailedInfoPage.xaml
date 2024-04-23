@@ -27,7 +27,7 @@
                     <Button Height="70" Margin="5" Style="{StaticResource RoundedButton}">
                     <TextBlock Style="{StaticResource DefaultText}" TextAlignment="Center">Насколько долгий марафон</TextBlock>
                 </Button>
-                    <Button Height="70" Margin="5 0" Style="{StaticResource RoundedButton}">
+                    <Button Height="70" Margin="5 0" Style="{StaticResource RoundedButton}" x:Name="CharitiesBtn" Click="CharitiesBtn_Click">
                     <TextBlock Style="{StaticResource DefaultText}" TextAlignment="Center">Список благотворительных организаций</TextBlock>
                 </Button>
                     <Button Height="70" Margin="5" Style="{StaticResource RoundedButton}">

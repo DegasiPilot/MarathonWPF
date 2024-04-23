@@ -57,11 +57,12 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock>Страна</TextBlock>
-                <ComboBox Width="80" ItemsSource="{Binding Runner.Country}" DisplayMemberPath="CountryName"></ComboBox>
+                <ComboBox Width="80" x:Name="CountryCb" DisplayMemberPath="CountryName"></ComboBox>
             </StackPanel>
         </StackPanel>
-        <Button Name="RegBtn" Width="100" Height="20" Margin="166,243,334,37">Регистрация</Button>
-        <Button Name="CancelBtn" Width="100" Height="20" Margin="313,243,187,37" Click="CancelBtn_Click">Отмена</Button>
+        <StackPanel Margin="0,243,0,37" HorizontalAlignment="Center" Orientation="Horizontal">
+            <Button Name="RegBtn" Width="100" Height="20">Регистрация</Button>
+            <Button Name="CancelBtn" Width="100" Height="20" Margin="15,0,0,0" Click="CancelBtn_Click">Отмена</Button>
+        </StackPanel>
     </Grid>
-
 </Page>

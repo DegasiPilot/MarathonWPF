@@ -82,6 +82,9 @@
     <Compile Include="Charity.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\CharityListUserControl.xaml.cs">
+      <DependentUpon>CharityListUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Country.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -105,12 +108,25 @@
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
       <DependentUpon>AdminMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CharityInfoWindow.xaml.cs">
+      <DependentUpon>CharityInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CharityListPage.xaml.cs">
+      <DependentUpon>CharityListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ContactInfoPage.xaml.cs">
       <DependentUpon>ContactInfoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
       <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\RegistrationToMaraphonPage.xaml.cs">
+      <DependentUpon>RegistrationToMaraphonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ThanksForSponsorshipPage.xaml.cs">
+      <DependentUpon>ThanksForSponsorshipPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PartialClasses\Runner.cs" />
     <Compile Include="Position.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -150,6 +166,10 @@
     <Compile Include="Volunteer.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Page Include="Components\CharityListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -163,6 +183,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\AdminMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CharityInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CharityListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +210,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\RegistrationToMaraphonPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RunnerEnterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +223,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SponsorRegPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ThanksForSponsorshipPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -267,6 +303,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assets\Charity\arise-logo.png" />
+    <Resource Include="Assets\Charity\aves-do-brazil-logo.png" />
+    <Resource Include="Assets\Charity\clara-santos-oliveira-institute-logo.png" />
+    <Resource Include="Assets\Charity\conquer-cancer-brazil.png" />
+    <Resource Include="Assets\Charity\diabetes-brazil-logo.png" />
+    <Resource Include="Assets\Charity\heart-health-sao-paulo-logo.png" />
+    <Resource Include="Assets\Charity\human-rights-centre-logo.png" />
+    <Resource Include="Assets\Charity\oxfam-international-logo.png" />
+    <Resource Include="Assets\Charity\querstadtein-logo.png" />
+    <Resource Include="Assets\Charity\save-the-children-fund-logo.png" />
+    <Resource Include="Assets\Charity\stay-pumped-logo.png" />
+    <Resource Include="Assets\Charity\the-red-cross-logo.png" />
+    <Resource Include="Assets\Charity\upbeat-logo.png" />
+    <Resource Include="Assets\Charity\wwsm-rescue-logo.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -281,5 +331,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

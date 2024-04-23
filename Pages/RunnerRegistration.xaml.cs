@@ -28,11 +28,13 @@ namespace MarathonWPF.Pages
             runner = new Runner();
             DataContext = runner;
             GenderCb.ItemsSource = App.db.Gender.ToList();
+            CountryCb.ItemsSource = App.db.Country.ToList();
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
         {
             (Application.Current.MainWindow as MainWindow).MainFrame.GoBack();
+            (Application.Current.MainWindow as MainWindow).MainFrame.RemoveBackEntry();
         }
     }
 }

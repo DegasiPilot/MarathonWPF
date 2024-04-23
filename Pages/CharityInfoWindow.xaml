@@ -1,0 +1,20 @@
+﻿<Window x:Class="MarathonWPF.Pages.CharityInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MarathonWPF.Pages"
+        mc:Ignorable="d"
+        Title="CharityInfoWindow" Height="300" Width="600" ResizeMode="NoResize">
+    <Grid>
+        <ScrollViewer Margin="0">
+            <WrapPanel>
+                <StackPanel Width="583">
+                    <TextBlock x:Name="SponsorNameTb" Text="{Binding CharityName}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,15,0,0"></TextBlock>
+                <Image Margin="0,15,0,0" Width="100" x:Name="logoImage"></Image>
+                <TextBlock Margin="50,15,50,0" TextWrapping="Wrap" Text="{Binding CharityDescription}"></TextBlock>
+                </StackPanel>
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

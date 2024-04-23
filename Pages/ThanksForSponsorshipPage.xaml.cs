@@ -16,18 +16,19 @@ using System.Windows.Shapes;
 namespace MarathonWPF.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для DetailedInfoPage.xaml
+    /// Логика взаимодействия для ThanksForSponsorshipPage.xaml
     /// </summary>
-    public partial class DetailedInfoPage : Page
+    public partial class ThanksForSponsorshipPage : Page
     {
-        public DetailedInfoPage()
+        public ThanksForSponsorshipPage()
         {
             InitializeComponent();
         }
 
-        private void CharitiesBtn_Click(object sender, RoutedEventArgs e)
+        private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            App.MainFrame.Navigate(new Uri("Pages/CharityListPage.xaml", UriKind.Relative)); 
+            NavigationService.GoBack();
+            NavigationService.RemoveBackEntry();
         }
     }
 }

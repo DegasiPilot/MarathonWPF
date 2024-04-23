@@ -12,22 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MarathonWPF.Components;
 
 namespace MarathonWPF.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для DetailedInfoPage.xaml
+    /// Логика взаимодействия для CharityListPage.xaml
     /// </summary>
-    public partial class DetailedInfoPage : Page
+    public partial class CharityListPage : Page
     {
-        public DetailedInfoPage()
+        public CharityListPage()
         {
             InitializeComponent();
-        }
-
-        private void CharitiesBtn_Click(object sender, RoutedEventArgs e)
-        {
-            App.MainFrame.Navigate(new Uri("Pages/CharityListPage.xaml", UriKind.Relative)); 
+            foreach (var item in App.db.Charity.ToList())
+            {
+                charityListWP.Children.Add(new CharityListUserControl(item));
+            }
         }
     }
 }

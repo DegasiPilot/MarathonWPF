@@ -14,7 +14,7 @@
             <Button Style="{StaticResource RoundedButton}" Height="40" Width="200">
                 <TextBlock Style="{StaticResource DefaultText}">Бегуны</TextBlock>
             </Button>
-            <Button Margin="15 0 0 0" Style="{StaticResource RoundedButton}" Height="40" Click="RegRunnerBtn_Click" Width="200">
+            <Button Margin="15 0 0 0" Style="{StaticResource RoundedButton}" Height="40" Width="200">
                 <TextBlock Style="{StaticResource DefaultText}">Спонсоры</TextBlock>
             </Button>
         </StackPanel>

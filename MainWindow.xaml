@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Marathon Skills 2016" Height="480" Width="600" MinHeight="480" MinWidth="600">
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="100*" MinHeight="100"/>
+            <RowDefinition Height="100*"/>
             <RowDefinition Height="300*" MinHeight="300"/>
             <RowDefinition Height="50*" MinHeight="50"/>
         </Grid.RowDefinitions>
         <Rectangle Fill="#FF525252"></Rectangle>
+        <Button Style="{StaticResource RoundedButton}" Margin="15,15, 0, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="25" x:Name="BackBtn" Click="BackBtn_Click">
+            <TextBlock>Назад</TextBlock>
+        </Button>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Style="{StaticResource Title}" Foreground="White">MARATHON SKILLS 2016</Label>
-            <TextBlock Style="{StaticResource DefaultText}" Foreground="#FFCCCCCC" FontStyle="Italic" Width="160" TextAlignment="Center">
+            <TextBlock Style="{StaticResource DefaultText}" Foreground="#FFCCCCCC" FontStyle="Italic" Width="160" TextAlignment="Center" x:Name="CompetionDateTb">
                     Москва, Россия среда 21 октября 2016
             </TextBlock>
         </StackPanel>

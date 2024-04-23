@@ -13,60 +13,65 @@
             <Label Margin="5 0 5 5" HorizontalContentAlignment="Center" Style="{StaticResource Title}">Спонсор бегуна</Label>
             <TextBlock Margin="15 0" TextAlignment="Center" TextWrapping="Wrap" Style="{StaticResource SmallText}">Пожалуйста выберите бегуна, которого вы хотели бы спонсировать и сумму, которую вы хотели бы споснировать. Спасибо за вашу поддержку бегунов и их благотворительных учереждений.</TextBlock>
         </StackPanel>
-        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="400">
-            <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="15">
-            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Ваше имя:</TextBlock>
-                <TextBox Width="100" Name="nameTB"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Бегун:</TextBlock>
-                <ComboBox Width="100" DisplayMemberPath="RunnerId" Name="RunnerCB"></ComboBox>
-            </StackPanel>
-            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Карта:</TextBlock>
-                <TextBox Width="100" Name="CartOwnerTB"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Номер карты#:</TextBlock>
-                <TextBox Width="100" Name="CartNumberTB"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Срок действия:</TextBlock>
-                <TextBox Margin="0 0 5 0" Name="CartExpDateMonthTB" Width="30"></TextBox>
-                <TextBox Name="CartExpDateYearTB" Width="65"></TextBox>
-            </StackPanel>
-            <StackPanel Margin="3" HorizontalAlignment="Right" Orientation="Horizontal">
-                    <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">CVC:</TextBlock>
-                <TextBox Width="100" Name="CartCVVTB"></TextBox>
-            </StackPanel>
-        </StackPanel>
-        <StackPanel VerticalAlignment="Bottom" Height="150" HorizontalAlignment="Right" Margin="15">
-            <StackPanel Margin="3">
-                    <TextBlock Style="{StaticResource SmallText}">Благотворительность</TextBlock>
-                <TextBlock Name="FoundNameTB"></TextBlock>
-            </StackPanel>
-            <StackPanel Margin="3">
-                    <TextBlock Style="{StaticResource SmallText}">Сумма пожертвования</TextBlock>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <TextBlock Style="{StaticResource SmallText}">$</TextBlock>
-                    <TextBlock x:Name="CharityAmountTB"></TextBlock>
+        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="600">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <StackPanel Margin="10, 15">
+                    <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Ваше имя:</TextBlock>
+                        <TextBox Width="100" Name="nameTB"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Бегун:</TextBlock>
+                        <ComboBox Width="100" DisplayMemberPath = "InfoString" Name="RunnerCB" SelectionChanged="RunnerCB_SelectionChanged"></ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Владелец карты:</TextBlock>
+                        <TextBox Width="100" Name="CartOwnerTB"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Номер карты#:</TextBlock>
+                        <TextBox Width="100" Name="CartNumberTB" MaxLength="16" PreviewTextInput="NumberTB_PreviewTextInput"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="5" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">Срок действия:</TextBlock>
+                        <TextBox Margin="0 0 5 0" Name="CartExpDateMonthTB" Width="30" MaxLength="2" PreviewTextInput="NumberTB_PreviewTextInput"></TextBox>
+                        <TextBox Name="CartExpDateYearTB" Width="65" MaxLength="4" PreviewTextInput="NumberTB_PreviewTextInput"></TextBox>
+                    </StackPanel>
+                    <StackPanel Margin="3" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <TextBlock Margin="0 0 5 0" Style="{StaticResource SmallText}">CVC:</TextBlock>
+                        <TextBox Width="100" Name="CartCVVTB" MaxLength="3" PreviewTextInput="NumberTB_PreviewTextInput"></TextBox>
+                    </StackPanel>
                 </StackPanel>
-                    <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Name="CharityAmountMinusBTn">-</Button>
-                    <TextBox Width="80" Name="CharitySelectorTB"></TextBox>
-                    <Button Name="CherityAmountPlusBTn">+</Button>
-                </StackPanel>
-                <StackPanel Margin="3" Orientation="Horizontal">
-                    <Button Margin="3" Name="payCharityBtn">
-                            <TextBlock Style="{StaticResource SmallText}">Заплатить</TextBlock>
-                    </Button>
-                        <Button Margin="3" Name="CancelBtn" Click="CancelBtn_Click">
-                            <TextBlock Style="{StaticResource SmallText}">Отмена</TextBlock>
-                        </Button>
+                <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10, 15">
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource SmallText}" TextAlignment="Center">Благотворительность</TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Name="FoundNameTB" Style="{StaticResource DefaultText}" VerticalAlignment="Center"></TextBlock>
+                            <Button Width="30" Height="30" Style="{StaticResource RoundedButton}" Margin="5, 0, 0, 0" FontSize="20" x:Name="CharityBtnInfo" Click="CharityBtnInfo_Click">i</Button>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Margin="0,5,0,0">
+                        <TextBlock Style="{StaticResource SmallText}" TextAlignment="Center">Сумма пожертвования</TextBlock>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock x:Name="CharityAmountTB" Style="{StaticResource SmallText}">0</TextBlock>
+                            <TextBlock Style="{StaticResource SmallText}">$</TextBlock>
+                        </StackPanel>
+                        <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Name="CharityAmountMinusBTn" Click="CharityAmountMinusBTn_Click">-</Button>
+                            <TextBox Width="80" Name="CharitySelectorTB" PreviewTextInput="NumberTB_PreviewTextInput" TextAlignment="Center" TextChanged="CharitySelectorTB_TextChanged">0</TextBox>
+                            <Button Name="CherityAmountPlusBTn" Click="CherityAmountPlusBTn_Click">+</Button>
+                        </StackPanel>
+                        <StackPanel Margin="3" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Margin="3" Name="payCharityBtn" Click="payCharityBtn_Click">
+                                <TextBlock Style="{StaticResource SmallText}">Заплатить</TextBlock>
+                            </Button>
+                            <Button Margin="3" Name="CancelBtn" Click="CancelBtn_Click">
+                                <TextBlock Style="{StaticResource SmallText}">Отмена</TextBlock>
+                            </Button>
+                        </StackPanel>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
-        </StackPanel>
         </Grid>
     </Grid>
 </Page>
